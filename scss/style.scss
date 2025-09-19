@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+:root {
+  // 背景色
+  --main-background-img: url(../img/background-img.png);
+  // ラインハイト
+  --line-height: 1.6;
+}
+
+// pc用レスポンシブ
+@mixin to-desktop {
+  @media (min-width: 601px) {
+    @content;
+  }
+}
+
+// 全体
+body {
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-image: var(--main-background-img);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  font-size: 24px;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+
+  @include to-desktop {
+    font-size: clamp(24px, 3.6vw, 36px);
+  }
+}
+
+h2 {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+
+  @include to-desktop {
+    font-size: clamp(20px, 3vw, 30px);
+  }
+}
+
+h3 {
+  font-size: 18px;
+  text-align: center;
+
+  @include to-desktop {
+    font-size: clamp(18px, 2.6vw, 26px);
+  }
+}
+
+p,
+li {
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: var(--line-height);
+  text-align: left;
+}
+
+.menu-item {
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: var(--line-height);
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+
+  td + td {
+    text-align: right;
+  }
+}
+
+// header
+header {
+  height: 100vh;
+  padding-top: 40px;
+  display: grid;
+  align-items: space-between;
+
+  .catch-title h2 {
+    line-height: var(--line-height);
+  }
+
+  .shop {
+    display: inline-block;
+    margin: 0 auto;
+  }
+
+  .header-img-list {
+    display: flex;
+    justify-content: center;
+    column-gap: 60px;
+    user-select: none;
+
+    img {
+      width: 310px;
+
+      @include to-desktop {
+        width: 280px;
+      }
+    }
+
+    img[src="img/header-img-1.png"],
+    img[src="img/header-img-3.png"] {
+      display: none;
+
+      @include to-desktop {
+        display: inline;
+      }
+    }
+  }
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  display: grid;
+  row-gap: 60px;
+}
+
+.menu-list,
+.passion-list,
+.campaign-list {
+  display: grid;
+  row-gap: 20px;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+
+  @include to-desktop {
+    max-width: 1000px;
+  }
+}

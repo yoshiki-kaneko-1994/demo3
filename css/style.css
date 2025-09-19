@@ -1,0 +1,134 @@
+:root {
+  --main-background-img: url(../img/background-img.png);
+  --line-height: 1.6;
+}
+
+body {
+  font-family: "Noto Serif JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  background-image: var(--main-background-img);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.title {
+  font-size: 24px;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+@media (min-width: 601px) {
+  .title {
+    font-size: clamp(24px, 3.6vw, 36px);
+  }
+}
+
+h2 {
+  font-size: 20px;
+  text-align: center;
+  font-family: "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+@media (min-width: 601px) {
+  h2 {
+    font-size: clamp(20px, 3vw, 30px);
+  }
+}
+
+h3 {
+  font-size: 18px;
+  text-align: center;
+}
+@media (min-width: 601px) {
+  h3 {
+    font-size: clamp(18px, 2.6vw, 26px);
+  }
+}
+
+p,
+li {
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: var(--line-height);
+  text-align: left;
+}
+
+.menu-item {
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: var(--line-height);
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+}
+.menu-item td + td {
+  text-align: right;
+}
+
+header {
+  height: 100vh;
+  padding-top: 40px;
+  display: grid;
+  align-items: space-between;
+}
+header .catch-title h2 {
+  line-height: var(--line-height);
+}
+header .shop {
+  display: inline-block;
+  margin: 0 auto;
+}
+header .header-img-list {
+  display: flex;
+  justify-content: center;
+  column-gap: 60px;
+  user-select: none;
+}
+header .header-img-list img {
+  width: 310px;
+}
+@media (min-width: 601px) {
+  header .header-img-list img {
+    width: 280px;
+  }
+}
+header .header-img-list img[src="img/header-img-1.png"],
+header .header-img-list img[src="img/header-img-3.png"] {
+  display: none;
+}
+@media (min-width: 601px) {
+  header .header-img-list img[src="img/header-img-1.png"],
+  header .header-img-list img[src="img/header-img-3.png"] {
+    display: inline;
+  }
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px;
+  display: grid;
+  row-gap: 60px;
+}
+
+.menu-list,
+.passion-list,
+.campaign-list {
+  display: grid;
+  row-gap: 20px;
+  width: 100%;
+  max-width: 240px;
+  margin: 0 auto;
+}
+@media (min-width: 601px) {
+  .menu-list,
+  .passion-list,
+  .campaign-list {
+    max-width: 1000px;
+  }
+}/*# sourceMappingURL=style.css.map */
